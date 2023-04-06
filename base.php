@@ -14,3 +14,4 @@ catch(mysqli_sql_exception){
 if($conn){
     echo "<br><br><br>Conectado ao banco de dados";
 }
+echo "<br>";

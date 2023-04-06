@@ -8,8 +8,9 @@ CREATE TABLE tb_candidatos(
 CREATE TABLE tb_eleitor(
 	nome varchar(50),
     id varchar(5)
-)
+);
 CREATE TABLE tb_voto(
-    voto char(2)
-)
-SELECT * FROM tb_eleitor;
+    voto numeric(2)
+);
+DROP TABLE tb_candidatos;
+SELECT * FROM tb_voto;
