@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-
+    <h1>Registrar Candidatos</h1>
     <form action="" method="post">
         <input type="text" name="nome" id="" placeholder="Nome do Candidato">
         <input type="text" name="partido" id="" placeholder="Partido">
