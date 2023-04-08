@@ -19,19 +19,12 @@
 </html>
 <?php
 include '../base.php'; 
-    $nome = null;
-    $numero = null;
-    $partido = null;
-    if(isset($_POST['nome'])&&isset($_POST['partido'])&&isset($_POST['numero'])){
-    $nome = $_POST['nome'];
-    $partido = $_POST['partido'];
-    $numero = $_POST['numero'];
-    }
-    else{
-        $nome = null;
-        $numero = null;
-        $partido = null;
-    }
+
+    $nome = $_POST['nome'] ?? "";
+    $partido = $_POST['partido'] ?? "";
+    $numero = $_POST['numero'] ?? "";
+    
+
     $resu = mysqli_query($conn,"INSERT INTO tb_candidatos(nome,partido,numero) VALUES('$nome','$partido','$numero')");
     echo '<script>alert("Cadastrado com sucesso!")</script>';
     mysqli_close($conn);

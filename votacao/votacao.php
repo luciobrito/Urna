@@ -15,6 +15,6 @@
 </body>
 </html>
 <?php
-$numc = $_POST['num_cand'];
+$numc = $_POST['num_cand'] ?? "";
 include '../base.php';
 $resu = mysqli_query($conn,"INSERT INTO tb_voto(voto) VALUES('$numc')");

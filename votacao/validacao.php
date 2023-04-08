@@ -21,13 +21,9 @@
 
 <?php
 include '../base.php';
-$id = null;
-if(isset($_POST['id'])){
-    $id = $_POST['id'];
-}
-else{
-    $id = null;
-}
+
+
+$id = $_POST['id'] ?? "";
 
 $resu = mysqli_query($conn, "SELECT id from tb_eleitor where '$id'");
 while($row=mysqli_fetch_array($resu)){

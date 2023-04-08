@@ -5,12 +5,9 @@ $pass = "";
 $base = "urna";
 $url = "votacao.php";
 
-try{
-    $conn = mysqli_connect($host, $user, $pass, $base);
-}
-catch(mysqli_sql_exception){
-    echo "Não conectado ao banco de dados";
-}
+$conn = mysqli_connect($host, $user, $pass, $base);
+
+
 if($conn){
     echo "<br><br><br>Conectado ao banco de dados";
 }

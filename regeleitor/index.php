@@ -18,16 +18,12 @@
 </html>
 <?php
     include '../base.php';
-    $nome = null;
-    $id = null;
+
     $mensagem = "";
-    if(isset($_POST['nome']) == true && isset($_POST['id']) == true){
-    $nome = $_POST['nome'];
-    $id = $_POST['id'];}
-    if(empty($_POST['nome'] )&& empty($_POST['id'])){
-    $nome = null;
-    $id = null;
-    }
+
+    $nome = $_POST['nome']?? "";
+    $id = $_POST['id']?? "";
+
     $resu = mysqli_query($conn,"INSERT INTO tb_eleitor(nome,id) VALUES('$nome','$id')");
     if(!empty($_POST['nome'] )&& !empty($_POST['id'])){
         $mensagem = " Cadastrado com sucesso!";
