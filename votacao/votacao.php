@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Votação</title>
 </head>
 <body>
     <h1>Votação</h1>
     <form action="votacao.php" method="post">
-        <input type="text" name="num_cand" id="" placeholder="numero do candidato">
+        <input type="number" name="num_cand" id="" placeholder="numero do candidato" min="0" max="99">
         <input type="submit" value="Confirmar">
     </form>
 </body>
