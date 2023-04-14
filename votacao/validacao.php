@@ -32,9 +32,12 @@ $_SESSION['time']     = time();
 $resu = mysqli_query($conn, "SELECT id FROM tb_eleitor WHERE id = '$id'");
 $num_rows = mysqli_num_rows($resu);
 if ($num_rows > 0 && isset($_POST['id'])) {
-    header("Location: votacao.php");
+    header("Location: votacao.html");
   }
-  else {
+else if(empty($id)){
+echo "Campo Vazio!";
+}
+  else{
     echo "Eleitor não encontrado";
   }
 /*while($row=mysqli_fetch_array($resu)){

@@ -15,7 +15,6 @@
     <h1>Resultado da Votação:</h1>
     <footer><form action="zerar.php"><input type="submit" value="Zerar Urna" name="submit"></form>
     <a href="arquivo.txt" download><button>Baixar Resultado</button></a></footer>
-    
 </body>
 
 </html>
@@ -65,9 +64,9 @@ echo "<br> Votos totais: " . $qvotos . "<br>";
 #echo "Partido $unico[0] | Votos:" . $contas[$unico[0]] . "<br> Partido $unico[1] | Votos: ". $contas[$unico[1]] ?? 0; echo "<br>Total: " . count($votos);
 ?>
 <?php
-$myfile = fopen("arquivo.txt", "w");
+$myfile = fopen("resultado.log", "w");
 
 
 $txt = "Votos Nulos:".$qnulo . " (" . round($qnulo * (100 / $qvotos), 1) . "%)" . "\r" . "Votos totais: " . $qvotos;
-fwrite($myfile, $txt);
+fputcsv($myfile, $votos);
 fclose($myfile);
