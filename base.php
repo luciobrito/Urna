@@ -9,6 +9,9 @@ $conn = mysqli_connect($host, $user, $pass, $base);
 
 
 if($conn){
-    echo "<br><br><br>Conectado ao banco de dados";
+    echo "<footer>🟢Banco de Dados</footer>";
+}
+else{
+    echo "<br><br><br>🔴Banco de Dados";
 }
 echo "<br>";

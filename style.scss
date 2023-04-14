@@ -1,0 +1,13 @@
+@mixin margem{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    }
+body{
+    padding: 1rem;
+}
+input{
+    @include margem;
+}
+button{
+    @include margem;
+}
