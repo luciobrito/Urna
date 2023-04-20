@@ -11,4 +11,17 @@ input {
 button {
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+}
+
+th {
+  padding: 10px;
 }/*# sourceMappingURL=style.css.map */

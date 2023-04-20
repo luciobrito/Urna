@@ -20,7 +20,17 @@
 
 </html>
 <?php
-date_default_timezone_set("America/Sao_Paulo");
-$myfile = fopen("arquivo.txt", "w");
-$txt = date("d-m-Y H:m:s");
-fwrite($myfile, $txt);
+include 'base.php';
+mysqli_query($conn, "CREATE TABLE tb_candidatos(
+	nome varchar(50),
+    partido varchar(50),
+    numero numeric(2) PRIMARY KEY
+)");
+mysqli_query($conn, "CREATE TABLE tb_eleitor(
+	nome varchar(50),
+    id numeric(5) PRIMARY KEY
+)");
+mysqli_query($conn, "CREATE TABLE tb_voto(
+    voto numeric(2)
+)");
+

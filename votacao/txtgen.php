@@ -1,17 +1,8 @@
 
 <?php
+$myfile = fopen("resultado.log", "w");
 
-$list = array (
-    array('aaa', 'bbb', 'ccc', 'dddd'),
-    array('123', '456', '789'),
-    array('"aaa"', '"bbb"')
-);
 
-$fp = fopen('file.csv', 'w');
-
-foreach ($list as $fields) {
-    fputcsv($fp, $fields);
-}
-
-fclose($fp);
-?>
+$txt = "Votos Nulos: ".$qnulo . " (" . round($qnulo * (100 / $qvotos), 1) . "%)" . "\r" . "Votos totais: " . $qvotos;
+fwrite($myfile, $txt);
+fclose($myfile);
