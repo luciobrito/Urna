@@ -11,7 +11,20 @@
             "name": "XAMPP",
             "username": "root",
             "database": "urna",
-            "askForPassword": true
+            "askForPassword": false
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "XAMPP2",
+            "database": "urna",
+            "username": "root",
+            "password": ""
         }
     ]
 }

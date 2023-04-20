@@ -27,12 +27,14 @@
 
     $nome = $_POST['nome']?? "";
     $id = $_POST['id']?? "";
+    if(isset($_POST['nome']) && isset($_POST['id'])){
     try{
     $resu = mysqli_query($conn,"INSERT INTO tb_eleitor(nome,id) VALUES('$nome','$id')");
     }
     catch(Exception $e){ ?><p style="color:red"> <?php 
         echo "Número já registrado <br> Erro: ",$e->getMessage();
     }
+}
     
     mysqli_close($conn); ?>
     </p>

@@ -30,7 +30,7 @@ include '../base.php';
     $nome = $_POST['nome'] ?? "---";
     $partido = $_POST['partido'] ?? "---";
     $numero = $_POST['numero'] ?? "";
-    
+    if(isset($_POST['nome']) && isset($_POST['numero'])){
     try{
     $resu = mysqli_query($conn,"INSERT INTO tb_candidatos(nome,partido,numero) VALUES('$nome','$partido','$numero')");
     }
@@ -38,7 +38,10 @@ include '../base.php';
         echo "Número já registrado <br> Erro: ",$e->getMessage();
     }
     #echo '<script>alert("Cadastrado com sucesso!")</script>';
-    
+}
+else{
+
+}
     mysqli_close($conn); ?>
     </p>
     
