@@ -1,5 +1,13 @@
+<?php
+session_start();
+if (!$_SESSION['id']) {
+    echo "<script>document.write('Acesso Negado')</script>";
+    exit; 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,18 +18,21 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    
     <h1>Registrar Candidatos</h1>
+    <p>Criar uma pagina separada onde tem botões para registrar eleitores, candidatos e iniciar votação</p>
+    <p>User:<?php echo $_SESSION['id'];?></p>
     <form action="" method="post">
         Nome do Candidato:<br>
         <input type="text" name="nome" id="" placeholder="Nome">
         <br>Partido:<br>
         <input type="text" name="partido" id="" placeholder="Partido">
 <br>Número:<br>
-        <input type="number" name="numero" id="" placeholder="10-99" min="10"max="99">
+        <input type="number" name="numero" id="" placeholder="10-99" min="10"max="99" value="">
         <br>
-        <input type="submit" value="Registrar">
+        <input type="submit" class="botaoconfirmar" value="Registrar">
     </form>
-    <a href="../regeleitor/index.php"><button>Finalizar</button></a>
+    <a href="../regeleitor/index.php"><button class="botaogenerico">Finalizar</button></a>
 </body>
 </html>
 <?php
@@ -30,12 +41,13 @@ include '../base.php';
     $nome = $_POST['nome'] ?? "---";
     $partido = $_POST['partido'] ?? "---";
     $numero = $_POST['numero'] ?? "";
-    if(isset($_POST['nome']) && isset($_POST['numero'])){
+    if(isset($_POST['nome']) && isset($_POST['numero']) && $numero > 9){
     try{
     $resu = mysqli_query($conn,"INSERT INTO tb_candidatos(nome,partido,numero) VALUES('$nome','$partido','$numero')");
     }
-    catch(Exception $e){ ?><p style="color:red"> <?php 
-        echo "Número já registrado <br> Erro: ",$e->getMessage();
+    catch(Exception $e){ 
+        $erro = $e->getMessage();
+        echo "<script>alert('Número já registrado!')</script>";
     }
     #echo '<script>alert("Cadastrado com sucesso!")</script>';
 }

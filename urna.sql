@@ -12,6 +12,10 @@ CREATE TABLE tb_eleitor(
 CREATE TABLE tb_voto(
     voto numeric(2)
 );
+CREATE TABLE tb_admin(
+    id varchar(20) PRIMARY KEY,
+    pass varchar(50)
+);
 DROP TABLE tb_candidatos;
 SELECT * FROM tb_candidatos;
 SELECT * FROM tb_voto;

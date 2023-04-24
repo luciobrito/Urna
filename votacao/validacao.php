@@ -27,7 +27,6 @@ include '../base.php';
 
 
 $id = $_POST['id'] ?? "";
-$_SESSION['time']     = time();
 
 $resu = mysqli_query($conn, "SELECT id FROM tb_eleitor WHERE id = '$id'");
 $num_rows = mysqli_num_rows($resu);

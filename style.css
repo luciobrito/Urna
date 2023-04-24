@@ -1,6 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 body {
   padding: 1rem;
-  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+h1 {
+  font-weight: 600;
 }
 
 input {
@@ -13,9 +18,11 @@ button {
   margin-bottom: 3px;
 }
 
-table, th, td {
-  border: 1px solid black;
+table {
+  border: 1px none black;
   border-collapse: collapse;
+  box-shadow: 1px 1px 3px #bbbbbb;
+  border-radius: 5px;
 }
 
 td {
@@ -24,4 +31,85 @@ td {
 
 th {
   padding: 10px;
+}
+
+.cartao {
+  background-color: #d85959;
+  box-shadow: 1px 1px 10px #bbbbbb;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.cartao-conteudo {
+  margin: 1rem;
+  white-space: wrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.botaoconfirmar {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #bbbbbb;
+  color: white;
+  background-color: #44c767;
+  box-shadow: 1px 1px 3px #44c767;
+}
+
+.botaogenerico {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #bbbbbb;
+  color: #666666;
+  text-shadow: none;
+}
+
+.erro {
+  font-weight: 500;
+  color: white;
+  background-color: #d85959;
+  box-shadow: 1px 1px 3px #d85959;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block;
+}
+
+input[type=text], input[type=password] {
+  border-style: none;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  box-shadow: 1px 1px 3px #bbbbbb;
+  padding: 8px;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=number] {
+  border-style: none;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  box-shadow: 1px 1px 3px #bbbbbb;
+  padding: 8px;
+  transition: 0.5s;
+  outline: none;
+  width: 100px;
+  outline: none;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
+  border: 1px solid #bebebe;
 }/*# sourceMappingURL=style.css.map */
