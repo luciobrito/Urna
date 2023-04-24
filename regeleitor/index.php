@@ -12,12 +12,17 @@
 <body>
     <h1>Registrar Eleitores</h1>
     <form action="" method="post">
+        <div class="cartaoform">
+            <label for="nome">Nome do Eleitor:</label>
         <input type="text" name="nome" id="" placeholder="Nome do Eleitor">
+        <label for="id">ID do Eleitor:</label>
         <input type="text" name="id" id="" placeholder="ID do eleitor">
-        <br>
-        <input type="submit" value="Cadastrar">
+        
+        <input type="submit" class="botaoconfirmar" value="Cadastrar">
+        <input type="button" class="botaogenerico" onclick="location.href = '../paineladm.php'" value="Finalizar"></input>
+    </div>
 </form>
-    <a href="../votacao/validacao.php"><button>Iniciar votação</button></a>
+    
 </body>
 </html>
 <?php

@@ -1,102 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
 $pad: 10px;
 $blur: 3px;
-@mixin margem{
-    margin-top: 3px;
-    margin-bottom: 3px;
-    }
-@mixin botao{
-    border-style: none;
-    border-radius: 5px;
-    padding: 7px;
-    text-shadow:0px 1px $blur #636363;
-    cursor: pointer;
-    box-shadow: 1px 1px $blur #bbbbbb ;
+@mixin margem {
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
-@mixin inputtxt{
-    border-style: none;
-    border-radius: 5px;
-    border: 1px solid #ffffff00;
-    box-shadow: 1px 1px $blur #bbbbbb ;
-    padding: 8px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
+@mixin botao {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px $blur #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px $blur #bbbbbb;
 }
-body{
-    padding: 1rem;
-    font-family: 'Quicksand', sans-serif;
+@mixin inputtxt {
+  border-style: none;
+  border-radius: 5px;
+  border: 1px solid #ffffff00;
+  box-shadow: 1px 1px $blur #bbbbbb;
+  padding: 8px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+body {
+  padding: 1rem;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+    font-family: 'Roboto Condensed', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  background: #0eb5cf;
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #0eb5cf 0%,
+    #fff700 50%,
+    #04cf18 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #303030;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+}
 
+input {
+  @include margem;
 }
-h1{
-    font-weight: 600;
-}
-input{
-    @include margem;
-}
-button{
-    @include margem;
+button {
+  @include margem;
 }
 table {
-    border: 1px none black;
-    border-collapse: collapse;
-    box-shadow: 1px 1px $blur #bbbbbb ;
+  border: 1px none black;
+  border-collapse: collapse;
+  box-shadow: 1px 1px $blur #bbbbbb;
+  border-radius: 5px;
+}
+td {
+  padding: $pad;
+}
+th {
+  padding: $pad;
+}
+.subtitulo {
+  font-weight: 500;
+  font-size: 130%;
+}
+.cartao {
+  background-color: #d85959;
+  box-shadow: 1px 1px 10px #bbbbbb;
+  border-radius: 5px;
+  border-width: 1px;
+}
+.cartao-conteudo {
+  margin: 1rem;
+  white-space: wrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+.botaoconfirmar {
+  @include botao;
+  color: white;
+  background-color: #44c767;
+  box-shadow: 1px 1px $blur #44c767;
+}
+.botaogenerico {
+  @include botao;
+  color: #666666;
+  text-shadow: none;
+}
+.erro {
+  font-weight: 500;
+  color: white;
+  background-color: #d85959;
+  box-shadow: 1px 1px $blur #d85959;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block;
+}
+.cartaoform{
+    font-weight: bold;
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    grid-row-gap: 10px;
+    grid-template-columns: 20rem ;
+    padding: 1.25rem;
     border-radius: 5px;
-    
+    box-shadow: 0px 1px $blur #5c5c5c;
 }
-td{
-    padding: $pad;
+input[type="text"],
+input[type="password"] {
+  @include inputtxt;
 }
-th{
-    padding: $pad;
+input[type="number"] {
+  @include inputtxt;
+  width: 100px;
+  outline: none;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
-.cartao{
-    background-color: #d85959;
-    box-shadow: 1px 1px 10px #bbbbbb ;
-    border-radius: 5px;
-    border-width: 1px;
-  }
-  .cartao-conteudo{
-    margin: 1rem;
-    white-space: wrap;
-    overflow: auto;
-    text-overflow: ellipsis;
-  }
-.botaoconfirmar{
-    @include botao;
-    color: white;
-    background-color:#44c767;
-    box-shadow: 1px 1px $blur #44c767 ;
-}
-.botaogenerico{
-    @include botao;
-    color: #666666;
-    text-shadow: none;
-}
-.erro{
-    font-weight: 500;
-    color: white;
-    background-color: #d85959;
-    box-shadow: 1px 1px $blur #d85959 ;
-    border-radius: 5px;
-    padding: 10px;
-    display:inline-block;
-}
-input[type=text], input[type=password]{
-    @include inputtxt;
-}
-input[type=number]{
-    @include inputtxt;
-    width: 100px;
-    outline: none;
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-         appearance: textfield;
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-input[type=text]:focus, input[type=password]:focus, input[type=number]:focus{
-    border: 1px solid #bebebe;
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+  border: 1px solid #bebebe;
 }

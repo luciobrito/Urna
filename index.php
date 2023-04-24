@@ -15,18 +15,20 @@ session_start();
 </head>
 
 <body>
-    <h1>E-Voto</h1>
-    <p>Digite a senha de Administrador</p>
+    <h1 class="logo">E-Voto</h1>
+    <p class="subtitulo">Digite a senha de Administrador</p>
     
     <form method="post">
-        <label for="id">ID Administrador</label>
-        <br>
-        <input type="text" name="id" id="" placeholder="ID"><br>
-        <label for="pass">Senha do Administrador</label><br>
-        <input type="password" name="pass" id="" placeholder="Senha"><br>
-        <input type="submit" value="Entrar">
+        <div class="cartaoform">
+        <label for="id">ID Administrador: </label>
+
+        <input type="text" name="id" id="" placeholder="ID">
+        <label for="pass">Senha do Administrador: </label>
+        <input type="password" name="pass" id="" placeholder="Senha">
+        <input type="submit" class="botaoconfirmar" value="Entrar">
+        </div>
+        
     </form>
-    <p><a href="arquivo.txt" download>Baixar</a></p>
 </body>
 
 </html>

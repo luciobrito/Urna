@@ -20,19 +20,21 @@ if (!$_SESSION['id']) {
 <body>
     
     <h1>Registrar Candidatos</h1>
-    <p>Criar uma pagina separada onde tem botões para registrar eleitores, candidatos e iniciar votação</p>
     <p>User:<?php echo $_SESSION['id'];?></p>
     <form action="" method="post">
-        Nome do Candidato:<br>
-        <input type="text" name="nome" id="" placeholder="Nome">
-        <br>Partido:<br>
+        <div class="cartaoform">
+        Nome do Candidato:
+        <input type="text" name="nome" id="" placeholder="Nome" >
+        Partido:
         <input type="text" name="partido" id="" placeholder="Partido">
-<br>Número:<br>
+Número:
         <input type="number" name="numero" id="" placeholder="10-99" min="10"max="99" value="">
-        <br>
+
         <input type="submit" class="botaoconfirmar" value="Registrar">
+        <input type="button" class="botaogenerico" onclick="location.href = '../paineladm.php'" value="Finalizar"></input>
+        </div>
     </form>
-    <a href="../regeleitor/index.php"><button class="botaogenerico">Finalizar</button></a>
+    
 </body>
 </html>
 <?php
