@@ -25,46 +25,49 @@ $resu2 = mysqli_query($conn, "SELECT * FROM tb_candidatos");
 
 $votos = array();
 $num_cand = array();
-$nome_cand = array();
+
 if (mysqli_num_rows($resu) == 0) {
     echo "Nenhum voto na urna.";
     exit;
 }
+//Preenche as arrays com os valores encontrados no banco
 while ($row = mysqli_fetch_assoc($resu)) {
     $votos[] = $row["voto"];
 }
 while ($row = mysqli_fetch_assoc($resu2)) {
     $num_cand[] = $row["numero"];
 }
-//Conta quantas vezes cada valor aparece na array
+
 $contas = array_count_values($votos);
-//Filtra os valores unicos na array
+
 $unico = array_unique($votos);
-//Compara os valores entre candidatos registrados e candidatos votados
+//Faz a relação entre candidatos registrados e os votos da urna.
 $nulo = array_diff($votos, $num_cand);
-//Coloca os votos nulos em ordem crescente;
+//Coloca os valores em ordem crescente e conta a quantidade de valores existentes
 sort($nulo);
-//Conta a quantidade de valores nulos existentes.
-$qnulo = count($nulo);
-//Coloca os valores em ordem crescente
 sort($unico);
-echo "<br>";
-//Conta quantos valores unicos existem na array;
+$qnulo = count($nulo);
 $qvotos = count($votos);
 $nunico = count($unico);
-//Loop que se repete conforme a quantidade de valorese únicos na array
+
+$nome_cand = array();
 for($i=0;$i<$nunico;$i++){
-$resu3 = mysqli_query($conn, "SELECT nome FROM tb_candidatos WHERE numero = $unico[$i]");
-while ($row = mysqli_fetch_assoc($resu3)) {
+$resu3 = mysqli_query($conn, "SELECT nome FROM tb_candidatos WHERE numero = $unico[$i];");
+//Se o Nome do Candidato for encontrado no banco, este é acrescentado na array
+if ($row = mysqli_fetch_array($resu3)) {
     $nome_cand[] = $row["nome"];
+}
+//Caso contrário será preenchido como nulo
+else{
+    $nome_cand[] = "Nulo";
 }}
 ?><table><tr><th>Nome</th><th>Número</th><th>Quantidade de Votos</th><tr><?php
 for ($i = 0; $i < $nunico; $i++) {
     $porcentagem = $contas[$unico[$i]] * (100 / $qvotos);
     echo "<tr>"."<td>";
+    //Coloca o nome dos candidatos em ordem númerica na tabela
     echo $nome_cand[$i] ?? "Nulo";
-    echo "</td>"."<td>"." $unico[$i] </td><td>" . $contas[$unico[$i]] . "  (" . round($porcentagem, 1) . "%)" . "</td></tr>";
-
+    echo "</td>"."<td>". $unico[$i] ."</td><td>" .$contas[$unico[$i]] . "  (" . round($porcentagem, 1) . "%)" . "</td></tr>";
 }
 ?> </table> <?php
 $validos = $qvotos - $qnulo;

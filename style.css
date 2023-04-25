@@ -150,4 +150,27 @@ input[type=text]:focus,
 input[type=password]:focus,
 input[type=number]:focus {
   border: 1px solid #bebebe;
+}
+
+.teclado {
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px #5c5c5c;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+  gap: 10px;
+}
+.teclado .btnteclado, .teclado .btn0 {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #bbbbbb;
+  padding: 10px;
+}
+.teclado .btn0 {
+  grid-column-start: 2;
 }/*# sourceMappingURL=style.css.map */
