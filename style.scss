@@ -6,13 +6,14 @@ $blur: 3px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
-@mixin botao {
+@mixin botao($cor) {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
   text-shadow: 0px 1px $blur #636363;
   cursor: pointer;
-  box-shadow: 1px 1px $blur #bbbbbb;
+  box-shadow: 1px 1px $blur $cor;
+  background-color: $cor;
 }
 @mixin inputtxt {
   border-style: none;
@@ -88,15 +89,33 @@ th {
   text-overflow: ellipsis;
 }
 .botaoconfirmar {
-  @include botao;
+  @include botao(#44c767);
   color: white;
-  background-color: #44c767;
-  box-shadow: 1px 1px $blur #44c767;
+
 }
 .botaogenerico {
-  @include botao;
-  color: #666666;
+  @include botao(#c2c2c2);
   text-shadow: none;
+}
+.botaoverde{
+  @include botao(#299947);
+  color: white;
+
+}
+.botaovermelho{
+  @include botao(#c01919);
+color: white;
+
+}
+.btncorrige{
+  @include botao(#ee6110);
+}
+.btnconfirmar{
+  @include botao(rgb(44, 155, 0));
+}
+.btnbranco{
+  @include botao(white);
+  box-shadow: 0px 1px $blur #5c5c5c;
 }
 .erro {
   font-weight: 500;
@@ -149,11 +168,21 @@ input[type="number"]:focus {
   padding: $pad;
   gap: 10px;
   .btnteclado{
-    @include botao;
+    @include botao(rgb(0, 0, 0));
+    color: white;
+    box-shadow: 0px 1px $blur #5c5c5c;
     padding: $pad;
   }
   .btn0{
     @extend .btnteclado;
     grid-column-start: 2;
+  }
+  .tecfunc{
+    gap: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    button{
+      margin: 10px;
+    }
   }
 }

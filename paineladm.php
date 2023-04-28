@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if (!$_SESSION['id']) {
+    header("Location: index.php");
+    exit; 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +17,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Painel do Administrador</h1>
-    <a href="regcand/index.php"><button>Registrar Candidatos</button></a>
-    <a href="regeleitor/index.php"><button>Registrar Eleitores</button></a>
+    <h1>Painel do Administrador.</h1>
+    <p>Bem-vindo(a), <?php echo $_SESSION['id']?> ao painel do Administrador</p>
+    <a href="regcand/index.php"><button class="botaoverde">Registrar Candidatos</button></a>
+    <a href="regeleitor/index.php"><button class="botaoverde">Registrar Eleitores</button></a>
+    <a href="votacao/validacao.php"><button class="botaoverde">Iniciar a Votação</button></a>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php 
-$host = "localhost:3306";
+$host = "localhost:3308";
 $user = "root"; 
 $pass = "";
 $base = "urna";
@@ -9,7 +9,7 @@ $conn = mysqli_connect($host, $user, $pass, $base);
 
 
 if($conn){
-    echo "<footer>🟢Banco de Dados</footer>";
+    echo "<footer>🟢Conexão</footer>";
 }
 else{
     echo "<br><br><br>🔴Banco de Dados";

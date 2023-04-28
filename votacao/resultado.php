@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if (!$_SESSION['id']) {
+    header("Location: ../index.php");
+    exit; 
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +19,8 @@
 
 <body>
     <h1>Resultado da Votação:</h1>
-    <footer><form action="zerar.php"><input type="submit" value="Zerar Urna" name="submit"></form>
-    <a href="arquivo.txt" download><button>Baixar Resultado</button></a></footer>
+    
+    
 </body>
 
 </html>
@@ -75,6 +81,8 @@ echo "<br> Brancos e Nulos: " . $qnulo . " ( " . round($qnulo * (100 / $qvotos),
 echo " Votos validos: " .  $validos . " ( " . round($validos * (100 / $qvotos), 1) . "%)" . "<br>";
 echo "<br> Votos totais: " . $qvotos . "<br>";
 #echo "Partido $unico[0] | Votos:" . $contas[$unico[0]] . "<br> Partido $unico[1] | Votos: ". $contas[$unico[1]] ?? 0; echo "<br>Total: " . count($votos);
+echo '<footer><form action="zerar.php"><input type="submit" value="Zerar Urna" name="submit" class="botaovermelho"></form>';
+echo '<a href="arquivo.txt" download><button class="botaogenerico">Baixar Resultado</button></a></footer>';
 ?>
 <?php
 include 'txtgen.php';

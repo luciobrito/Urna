@@ -16,6 +16,7 @@ CREATE TABLE tb_admin(
     id varchar(20) PRIMARY KEY,
     pass varchar(50)
 );
+INSERT INTO tb_admin VALUES('admin','123');
 DROP TABLE tb_candidatos;
 SELECT * FROM tb_candidatos;
 SELECT * FROM tb_voto;

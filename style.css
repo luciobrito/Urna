@@ -76,10 +76,9 @@ th {
   padding: 7px;
   text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #bbbbbb;
-  color: white;
-  background-color: #44c767;
   box-shadow: 1px 1px 3px #44c767;
+  background-color: #44c767;
+  color: white;
 }
 
 .botaogenerico {
@@ -88,9 +87,62 @@ th {
   padding: 7px;
   text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #bbbbbb;
-  color: #666666;
+  box-shadow: 1px 1px 3px #c2c2c2;
+  background-color: #c2c2c2;
   text-shadow: none;
+}
+
+.botaoverde {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #299947;
+  background-color: #299947;
+  color: white;
+}
+
+.botaovermelho {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #c01919;
+  background-color: #c01919;
+  color: white;
+}
+
+.btncorrige {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #ee6110;
+  background-color: #ee6110;
+}
+
+.btnconfirmar {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgb(44, 155, 0);
+  background-color: rgb(44, 155, 0);
+}
+
+.btnbranco {
+  border-style: none;
+  border-radius: 5px;
+  padding: 7px;
+  text-shadow: 0px 1px 3px #636363;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px white;
+  background-color: white;
+  box-shadow: 0px 1px 3px #5c5c5c;
 }
 
 .erro {
@@ -168,9 +220,20 @@ input[type=number]:focus {
   padding: 7px;
   text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #bbbbbb;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  box-shadow: 0px 1px 3px #5c5c5c;
   padding: 10px;
 }
 .teclado .btn0 {
   grid-column-start: 2;
+}
+.teclado .tecfunc {
+  gap: 10px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.teclado .tecfunc button {
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */

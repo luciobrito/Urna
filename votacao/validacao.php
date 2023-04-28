@@ -18,10 +18,10 @@
 
     <form action="" method="post">
         <input type="text" name="id" id="ID do eleitor" placeholder="ID do eleitor">
-        <input type="submit" value="Confirmar">
+        <input type="submit" value="Confirmar" class="botaoconfirmar">
         
     </form>
-    <a href="resultado.php"><button>Resultado</button></a>
+    <a href="resultado.php"><button class="botaogenerico">Resultado</button></a>
 <?php
 include '../base.php';
 
@@ -30,15 +30,20 @@ $id = $_POST['id'] ?? "";
 
 $resu = mysqli_query($conn, "SELECT id FROM tb_eleitor WHERE id = '$id'");
 $num_rows = mysqli_num_rows($resu);
+echo '<div class="erro">';
 if ($num_rows > 0 && isset($_POST['id'])) {
     header("Location: votacao.html");
-  }
+  }  
+
+
 else if(empty($id)){
 echo "Campo Vazio!";
 }
   else{
     echo "Eleitor não encontrado";
   }
+echo "</div>";
+
 /*while($row=mysqli_fetch_array($resu)){
     header('Location: '.$url);
 }
