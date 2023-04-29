@@ -39,7 +39,7 @@ button {
 table {
   border: 1px none black;
   border-collapse: collapse;
-  box-shadow: 1px 1px 3px #bbbbbb;
+  box-shadow: 1px 1px 2px #bbbbbb;
   border-radius: 5px;
 }
 
@@ -74,82 +74,117 @@ th {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #44c767;
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: #44c767;
   color: white;
+}
+
+.botaoconfirmar:active {
+  transform: translateY(2px);
+  background-color: #35a052;
+  box-shadow: none;
 }
 
 .botaogenerico {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #c2c2c2;
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: #c2c2c2;
   text-shadow: none;
+}
+
+.botaogenerico:active {
+  transform: translateY(2px);
+  background-color: #949494;
+  box-shadow: none;
 }
 
 .botaoverde {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #299947;
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: #299947;
   color: white;
+}
+
+.botaoverde:active {
+  transform: translateY(2px);
+  background-color: #24833d;
+  box-shadow: none;
 }
 
 .botaovermelho {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #c01919;
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: #c01919;
   color: white;
+}
+
+.botaovermelho:active {
+  transform: translateY(2px);
+  background-color: #9e1616;
+  box-shadow: none;
 }
 
 .btncorrige {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px #ee6110;
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: #ee6110;
+}
+
+.btncorrige:active {
+  transform: translateY(2px);
+  background-color: #d45810;
+  box-shadow: none;
 }
 
 .btnconfirmar {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgb(44, 155, 0);
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: rgb(44, 155, 0);
+}
+
+.btnconfirmar:active {
+  transform: translateY(2px);
+  background-color: rgb(35, 122, 0);
+  box-shadow: none;
 }
 
 .btnbranco {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px white;
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: white;
-  box-shadow: 0px 1px 3px #5c5c5c;
+  box-shadow: 0px 1px 2px #5c5c5c;
+}
+
+.btnbranco:active {
+  transform: translateY(2px);
+  background-color: rgb(199, 199, 199);
+  box-shadow: none;
 }
 
 .erro {
   font-weight: 500;
   color: white;
   background-color: #d85959;
-  box-shadow: 1px 1px 3px #d85959;
+  box-shadow: 1px 1px 2px #d85959;
   border-radius: 5px;
   padding: 10px;
   display: inline-block;
@@ -164,7 +199,7 @@ th {
   grid-template-columns: 20rem;
   padding: 1.25rem;
   border-radius: 5px;
-  box-shadow: 0px 1px 3px #5c5c5c;
+  box-shadow: 0px 1px 2px #5c5c5c;
 }
 
 input[type=text],
@@ -172,7 +207,7 @@ input[type=password] {
   border-style: none;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0);
-  box-shadow: 1px 1px 3px #bbbbbb;
+  box-shadow: 1px 1px 2px #bbbbbb;
   padding: 8px;
   transition: 0.5s;
   outline: none;
@@ -182,7 +217,7 @@ input[type=number] {
   border-style: none;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0);
-  box-shadow: 1px 1px 3px #bbbbbb;
+  box-shadow: 1px 1px 2px #bbbbbb;
   padding: 8px;
   transition: 0.5s;
   outline: none;
@@ -206,7 +241,7 @@ input[type=number]:focus {
 
 .teclado {
   border-radius: 5px;
-  box-shadow: 0px 1px 3px #5c5c5c;
+  box-shadow: 0px 1px 2px #5c5c5c;
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: center;
@@ -218,13 +253,17 @@ input[type=number]:focus {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px 3px #636363;
   cursor: pointer;
-  box-shadow: 1px 1px 3px rgb(0, 0, 0);
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: rgb(0, 0, 0);
   color: white;
-  box-shadow: 0px 1px 3px #5c5c5c;
+  box-shadow: 0px 1px 2px #5c5c5c;
   padding: 10px;
+}
+.teclado .btnteclado:active, .teclado .btn0:active {
+  transform: translateY(2px);
+  background-color: rgb(31, 31, 31);
+  box-shadow: none;
 }
 .teclado .btn0 {
   grid-column-start: 2;

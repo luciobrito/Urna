@@ -1,9 +1,10 @@
-<?php
+<?php 
 session_start();
 if (!$_SESSION['id']) {
-    echo "<script>document.write('Acesso Negado')</script>";
+    header("Location: index.php");
     exit; 
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,10 +47,11 @@ include '../base.php';
     if(isset($_POST['nome']) && isset($_POST['numero']) && $numero > 9){
     try{
     $resu = mysqli_query($conn,"INSERT INTO tb_candidatos(nome,partido,numero) VALUES('$nome','$partido','$numero')");
+    echo "<script>Candidato Registrado com Sucesso!</script>";
     }
     catch(Exception $e){ 
         $erro = $e->getMessage();
-        echo "<script>alert('Número já registrado!')</script>";
+        echo '<div class="erro">Candidato já registrado! <br>'.$erro."</div>";
     }
     #echo '<script>alert("Cadastrado com sucesso!")</script>';
 }

@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (!$_SESSION['id']) {
+    header("Location: index.php");
+    exit; 
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +43,11 @@
     if(isset($_POST['nome']) && isset($_POST['id'])){
     try{
     $resu = mysqli_query($conn,"INSERT INTO tb_eleitor(nome,id) VALUES('$nome','$id')");
+    echo "<script>alert('Registrado com Sucesso!')</script>";
     }
     catch(Exception $e){ ?><p style="color:red"> <?php 
-        echo "Número já registrado <br> Erro: ",$e->getMessage();
+        echo '<div class="erro">Eleitor já registrado <br>',$e->getMessage();
+        echo '</div>';
     }
 }
     

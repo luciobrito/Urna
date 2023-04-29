@@ -82,7 +82,7 @@ echo " Votos validos: " .  $validos . " ( " . round($validos * (100 / $qvotos), 
 echo "<br> Votos totais: " . $qvotos . "<br>";
 #echo "Partido $unico[0] | Votos:" . $contas[$unico[0]] . "<br> Partido $unico[1] | Votos: ". $contas[$unico[1]] ?? 0; echo "<br>Total: " . count($votos);
 echo '<footer><form action="zerar.php"><input type="submit" value="Zerar Urna" name="submit" class="botaovermelho"></form>';
-echo '<a href="arquivo.txt" download><button class="botaogenerico">Baixar Resultado</button></a></footer>';
+echo '<a href="resultado.log" download><button class="botaogenerico">Baixar Resultado</button></a></footer>';
 ?>
 <?php
 include 'txtgen.php';

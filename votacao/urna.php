@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if (!$_SESSION['ideleitor']) {
+    header("Location: validacao.php");
+    exit; 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +24,8 @@
 <body>
   <h1>Votação</h1>
   <div class="teclado">
-    <form action="votacao.php" method="post">
-      <input type="text" name="num_cand" id="numcand" placeholder="" min="10" max="99" step=".01" id="visor" oninput="limiter(this)" disabled/><br />
-      <a href="validacao.php"><input type="submit" value="Confirmar" onclick="" class="btnconfirmar" /></a>
+    <form action="votacao.php" method="post" id="formvoto">
+      <input type="number" name="num_cand" id="numcand" placeholder="" min="10" max="99" step=".01"/><br />
 
     </form>
 
@@ -35,7 +41,7 @@
           onclick="add(0)">0</button> <br>
         <div class="tecfunc"> <!--Teclas Funcionais-->
           <button class="btncorrige" onclick="remover()">Corrige</button><button
-            class="btnbranco">Branco</button><button class="btnconfirmar" onclick="">Confirmar</button>
+            class="btnbranco">Branco</button><a href="validacao.php"><input type="submit" value="Confirmar" onclick="" form="formvoto" class="btnconfirmar" /></a>
         </div>
       </div>
 

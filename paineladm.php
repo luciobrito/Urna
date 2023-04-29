@@ -4,6 +4,7 @@ if (!$_SESSION['id']) {
     header("Location: index.php");
     exit; 
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,5 +23,6 @@ if (!$_SESSION['id']) {
     <a href="regcand/index.php"><button class="botaoverde">Registrar Candidatos</button></a>
     <a href="regeleitor/index.php"><button class="botaoverde">Registrar Eleitores</button></a>
     <a href="votacao/validacao.php"><button class="botaoverde">Iniciar a Votação</button></a>
+    <a href="encses.php"><button class="botaovermelho">Sair</button></a>
 </body>
 </html>

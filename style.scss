@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
 $pad: 10px;
-$blur: 3px;
+$blur: 2px;
 @mixin margem {
   margin-top: 3px;
   margin-bottom: 3px;
@@ -10,9 +10,8 @@ $blur: 3px;
   border-style: none;
   border-radius: 5px;
   padding: 7px;
-  text-shadow: 0px 1px $blur #636363;
   cursor: pointer;
-  box-shadow: 1px 1px $blur $cor;
+  box-shadow: 1px 1px 0px #5c5c5c;
   background-color: $cor;
 }
 @mixin inputtxt {
@@ -93,29 +92,55 @@ th {
   color: white;
 
 }
+@mixin active($cor){
+  transform: translateY(2px);
+  background-color: $cor;
+  box-shadow: none;
+}
+.botaoconfirmar:active{
+  @include active(#35a052);
+}
 .botaogenerico {
   @include botao(#c2c2c2);
   text-shadow: none;
+}
+.botaogenerico:active{
+  @include active(#949494);
 }
 .botaoverde{
   @include botao(#299947);
   color: white;
 
 }
+.botaoverde:active{
+  @include active(#24833d);  
+}
 .botaovermelho{
   @include botao(#c01919);
 color: white;
 
 }
+.botaovermelho:active{
+  @include active(#9e1616);  
+}
 .btncorrige{
   @include botao(#ee6110);
+}
+.btncorrige:active{
+  @include active(#d45810);
 }
 .btnconfirmar{
   @include botao(rgb(44, 155, 0));
 }
+.btnconfirmar:active{
+  @include active(rgb(35, 122, 0));
+}
 .btnbranco{
   @include botao(white);
   box-shadow: 0px 1px $blur #5c5c5c;
+}
+.btnbranco:active{
+  @include active(rgb(199, 199, 199));
 }
 .erro {
   font-weight: 500;
@@ -172,6 +197,9 @@ input[type="number"]:focus {
     color: white;
     box-shadow: 0px 1px $blur #5c5c5c;
     padding: $pad;
+  }
+  .btnteclado:active{
+    @include active(rgb(31, 31, 31));
   }
   .btn0{
     @extend .btnteclado;

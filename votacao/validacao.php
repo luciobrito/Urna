@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (!$_SESSION['id']) {
+    header("Location: ../index.php");
+    exit; 
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,12 +35,12 @@ include '../base.php';
 
 
 $id = $_POST['id'] ?? "";
-
+$_SESSION['ideleitor'] = $id;
 $resu = mysqli_query($conn, "SELECT id FROM tb_eleitor WHERE id = '$id'");
 $num_rows = mysqli_num_rows($resu);
 echo '<div class="erro">';
 if ($num_rows > 0 && isset($_POST['id'])) {
-    header("Location: votacao.html");
+    header("Location: urna.php");
   }  
 
 
