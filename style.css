@@ -37,13 +37,15 @@ button {
 }
 
 table {
-  border: 1px none black;
+  background-color: #f3f3f3;
+  border: 1px none rgb(185, 185, 185);
   border-collapse: collapse;
   box-shadow: 1px 1px 2px #bbbbbb;
   border-radius: 5px;
 }
-
-td {
+table td {
+  border: 0.5px solid rgb(161, 161, 161);
+  border-radius: 5px;
   padding: 10px;
 }
 
@@ -75,14 +77,14 @@ th {
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: #44c767;
   color: white;
 }
 
 .botaoconfirmar:active {
   transform: translateY(2px);
-  background-color: #35a052;
+  background-color: #38ba5a;
   box-shadow: none;
 }
 
@@ -91,14 +93,14 @@ th {
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: #c2c2c2;
   text-shadow: none;
 }
 
 .botaogenerico:active {
   transform: translateY(2px);
-  background-color: #949494;
+  background-color: #b5b5b5;
   box-shadow: none;
 }
 
@@ -107,14 +109,14 @@ th {
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: #299947;
   color: white;
 }
 
 .botaoverde:active {
   transform: translateY(2px);
-  background-color: #24833d;
+  background-color: #24853e;
   box-shadow: none;
 }
 
@@ -123,14 +125,14 @@ th {
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: #c01919;
   color: white;
 }
 
 .botaovermelho:active {
   transform: translateY(2px);
-  background-color: #9e1616;
+  background-color: #a91616;
   box-shadow: none;
 }
 
@@ -139,13 +141,13 @@ th {
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: #ee6110;
 }
 
 .btncorrige:active {
   transform: translateY(2px);
-  background-color: #d45810;
+  background-color: #d6570e;
   box-shadow: none;
 }
 
@@ -154,13 +156,13 @@ th {
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: rgb(44, 155, 0);
 }
 
 .btnconfirmar:active {
   transform: translateY(2px);
-  background-color: rgb(35, 122, 0);
+  background-color: #1c6100;
   box-shadow: none;
 }
 
@@ -169,14 +171,14 @@ th {
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: white;
   box-shadow: 0px 1px 2px #5c5c5c;
 }
 
 .btnbranco:active {
   transform: translateY(2px);
-  background-color: rgb(199, 199, 199);
+  background-color: #bababa;
   box-shadow: none;
 }
 
@@ -204,20 +206,18 @@ th {
 
 input[type=text],
 input[type=password] {
-  border-style: none;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0);
-  box-shadow: 1px 1px 2px #bbbbbb;
+  border: 1px solid #e2e2e2;
+  box-shadow: 1px 1px 2px #c2c2c2;
   padding: 8px;
   transition: 0.5s;
   outline: none;
 }
 
 input[type=number] {
-  border-style: none;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0);
-  box-shadow: 1px 1px 2px #bbbbbb;
+  border: 1px solid #e2e2e2;
+  box-shadow: 1px 1px 2px #c2c2c2;
   padding: 8px;
   transition: 0.5s;
   outline: none;
@@ -248,13 +248,14 @@ input[type=number]:focus {
   align-content: center;
   padding: 10px;
   gap: 10px;
+  background-color: #d1d1d1;
 }
 .teclado .btnteclado, .teclado .btn0 {
   border-style: none;
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: rgb(0, 0, 0);
   color: white;
   box-shadow: 0px 1px 2px #5c5c5c;
@@ -262,7 +263,7 @@ input[type=number]:focus {
 }
 .teclado .btnteclado:active, .teclado .btn0:active {
   transform: translateY(2px);
-  background-color: rgb(31, 31, 31);
+  background-color: #121212;
   box-shadow: none;
 }
 .teclado .btn0 {
@@ -275,4 +276,12 @@ input[type=number]:focus {
 }
 .teclado .tecfunc button {
   margin: 10px;
+}
+
+#numcand {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */

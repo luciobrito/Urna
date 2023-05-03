@@ -11,14 +11,14 @@ $blur: 2px;
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px #5c5c5c;
+  box-shadow: 1px 1px 0px #cccccc;
   background-color: $cor;
 }
 @mixin inputtxt {
-  border-style: none;
+
   border-radius: 5px;
-  border: 1px solid #ffffff00;
-  box-shadow: 1px 1px $blur #bbbbbb;
+  border: 1px solid #e2e2e2;
+  box-shadow: 1px 1px $blur #c2c2c2;
   padding: 8px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -60,13 +60,16 @@ button {
   @include margem;
 }
 table {
-  border: 1px none black;
+  background-color: #f3f3f3;
+  border: 1px none rgb(185, 185, 185);
   border-collapse: collapse;
   box-shadow: 1px 1px $blur #bbbbbb;
   border-radius: 5px;
-}
-td {
-  padding: $pad;
+  td {
+    border: .5px solid rgb(161, 161, 161);
+    border-radius: 5px;
+    padding: $pad;
+  }
 }
 th {
   padding: $pad;
@@ -94,18 +97,18 @@ th {
 }
 @mixin active($cor){
   transform: translateY(2px);
-  background-color: $cor;
+  background-color: darken($cor,5%);
   box-shadow: none;
 }
 .botaoconfirmar:active{
-  @include active(#35a052);
+  @include active(#44c767);
 }
 .botaogenerico {
   @include botao(#c2c2c2);
   text-shadow: none;
 }
 .botaogenerico:active{
-  @include active(#949494);
+  @include active(#c2c2c2);
 }
 .botaoverde{
   @include botao(#299947);
@@ -113,7 +116,7 @@ th {
 
 }
 .botaoverde:active{
-  @include active(#24833d);  
+  @include active(#299947);  
 }
 .botaovermelho{
   @include botao(#c01919);
@@ -121,13 +124,13 @@ color: white;
 
 }
 .botaovermelho:active{
-  @include active(#9e1616);  
+  @include active(#c01919);  
 }
 .btncorrige{
   @include botao(#ee6110);
 }
 .btncorrige:active{
-  @include active(#d45810);
+  @include active(#ee6110);
 }
 .btnconfirmar{
   @include botao(rgb(44, 155, 0));
@@ -192,6 +195,7 @@ input[type="number"]:focus {
   align-content: center;
   padding: $pad;
   gap: 10px;
+  background-color: #d1d1d1;
   .btnteclado{
     @include botao(rgb(0, 0, 0));
     color: white;
@@ -213,4 +217,11 @@ input[type="number"]:focus {
       margin: 10px;
     }
   }
+}
+#numcand{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
 }
