@@ -61,19 +61,29 @@ button {
 }
 table {
   background-color: #f3f3f3;
-  border: 1px none rgb(185, 185, 185);
   border-collapse: collapse;
   box-shadow: 1px 1px $blur #bbbbbb;
-  border-radius: 5px;
+
   td {
-    border: .5px solid rgb(161, 161, 161);
-    border-radius: 5px;
     padding: $pad;
+    border: solid #c2c2c2 1px;
+
   }
-}
-th {
+  th {
   padding: $pad;
 }
+}
+.tabelares{
+  margin-top: 15px;
+  text-align: center;
+  overflow:hidden;
+  border-collapse:separate;
+  border: solid #757575 1px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
 .subtitulo {
   font-weight: 500;
   font-size: 130%;

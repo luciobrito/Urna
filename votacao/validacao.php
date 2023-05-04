@@ -37,15 +37,24 @@ include '../base.php';
 $id = $_POST['id'] ?? "";
 $_SESSION['ideleitor'] = $id;
 $resu = mysqli_query($conn, "SELECT id FROM tb_eleitor WHERE id = '$id'");
+$comp = mysqli_query($conn, "SELECT compareceu FROM tb_eleitor WHERE id = '$id'");
+while($row = mysqli_fetch_array($comp)){
+    $comprow = $row["compareceu"];
+};
 $num_rows = mysqli_num_rows($resu);
 echo '<div class="erro">';
-if ($num_rows > 0 && isset($_POST['id'])) {
+if ($num_rows > 0 && isset($_POST['id']) && $comprow == 'nao') {
+    mysqli_query($conn,"UPDATE tb_eleitor SET compareceu = 'sim' WHERE id = '$id'");
     header("Location: urna.php");
-  }  
+    
+}  
 
 
 else if(empty($id)){
 echo "Campo Vazio!";
+}
+else if($comprow ?? "" == 'sim'){
+    echo "Eleitor já votou.";
 }
   else{
     echo "Eleitor não encontrado";

@@ -67,22 +67,25 @@ if ($row = mysqli_fetch_array($resu3)) {
 else{
     $nome_cand[] = "Nulo";
 }}
-?><table><tr><th>Nome</th><th>Número</th><th>Quantidade de Votos</th><tr><?php
+?><table class="tabelares" cellspacing="0"><tr><th>Nome</th><th>Número</th><th>Quantidade de Votos</th><tr><?php
 for ($i = 0; $i < $nunico; $i++) {
     $porcentagem = $contas[$unico[$i]] * (100 / $qvotos);
     echo "<tr>"."<td>";
     //Coloca o nome dos candidatos em ordem númerica na tabela
     echo $nome_cand[$i] ?? "Nulo";
-    echo "</td>"."<td>". $unico[$i] ."</td><td>" .$contas[$unico[$i]] . "  (" . round($porcentagem, 1) . "%)" . "</td></tr>";
+    echo "</td>"."<td>". $unico[$i] ."</td><td>  <b>" . round($porcentagem, 2) . "% </b><br>" . $contas[$unico[$i]] . "</td></tr>";
 }
-?> </table> <?php
+?> </table><?php
+echo '<table class="tabelares" cellspacing="0"><tr><th>Votos Totais</th></tr>';
 $validos = $qvotos - $qnulo;
-echo "<br> Brancos e Nulos: " . $qnulo . " ( " . round($qnulo * (100 / $qvotos), 1) . "%)" . "<br>";
-echo " Votos validos: " .  $validos . " ( " . round($validos * (100 / $qvotos), 1) . "%)" . "<br>";
-echo "<br> Votos totais: " . $qvotos . "<br>";
+echo "<tr><td> Brancos e Nulos:</td><td> <b> " . round($qnulo * (100 / $qvotos), 2) . "%</b><br>" . $qnulo . "</td></tr> ";
+echo "<tr><td> Votos validos: </td><td> <b>" . round($validos * (100 / $qvotos), 2) . "%</b><br>" .  $validos ."</td></tr>";
+echo "<tr><td> Votos totais: </td><td>" . $qvotos."</td></tr>";
+echo "</table>";
 #echo "Partido $unico[0] | Votos:" . $contas[$unico[0]] . "<br> Partido $unico[1] | Votos: ". $contas[$unico[1]] ?? 0; echo "<br>Total: " . count($votos);
 echo '<footer><form action="zerar.php"><input type="submit" value="Zerar Urna" name="submit" class="botaovermelho"></form>';
 echo '<a href="resultado.log" download><button class="botaogenerico">Baixar Resultado</button></a></footer>';
+
 ?>
 <?php
 include 'txtgen.php';
