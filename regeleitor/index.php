@@ -43,7 +43,13 @@ if (!$_SESSION['id']) {
     if(isset($_POST['nome']) && isset($_POST['id'])){
     try{
     $resu = mysqli_query($conn,"INSERT INTO tb_eleitor(nome,id,compareceu) VALUES('$nome','$id','nao')");
-    echo "<script>alert('Registrado com Sucesso!')</script>";
+    if($resu)
+    {
+        echo "<script>alert('Registrado com Sucesso!')</script>";
+    }
+    else{
+        echo '<div class="erro">Eleitor já registrado</div>';        
+    }
     }
     catch(Exception $e){ ?><p style="color:red"> <?php 
         echo '<div class="erro">Eleitor já registrado <br>',$e->getMessage();

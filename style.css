@@ -80,7 +80,7 @@ table th {
 .botaoconfirmar {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: #44c767;
@@ -96,7 +96,7 @@ table th {
 .botaogenerico {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: #c2c2c2;
@@ -112,7 +112,7 @@ table th {
 .botaoverde {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: #299947;
@@ -128,7 +128,7 @@ table th {
 .botaovermelho {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: #c01919;
@@ -144,7 +144,7 @@ table th {
 .btncorrige {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: #ee6110;
@@ -159,7 +159,7 @@ table th {
 .btnconfirmar {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: rgb(44, 155, 0);
@@ -174,7 +174,7 @@ table th {
 .btnbranco {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: white;
@@ -258,7 +258,7 @@ input[type=number]:focus {
 .teclado .btnteclado, .teclado .btn0 {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: rgb(0, 0, 0);
@@ -289,4 +289,26 @@ input[type=number]:focus {
   font-weight: bold;
   text-align: center;
   height: 100%;
+}
+
+footer {
+  margin: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  flex-direction: column;
+}
+footer a button {
+  width: 100%;
+}
+
+.grade {
+  margin: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  flex-direction: column;
+}
+.grade button {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

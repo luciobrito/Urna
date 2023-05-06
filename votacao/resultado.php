@@ -19,7 +19,7 @@ if (!$_SESSION['id']) {
 
 <body>
     <h1>Resultado da Votação:</h1>
-    
+    <p>O resultado será gerado em .log</p>
     
 </body>
 
@@ -83,8 +83,8 @@ echo "<tr><td> Votos validos: </td><td> <b>" . round($validos * (100 / $qvotos),
 echo "<tr><td> Votos totais: </td><td>" . $qvotos."</td></tr>";
 echo "</table>";
 #echo "Partido $unico[0] | Votos:" . $contas[$unico[0]] . "<br> Partido $unico[1] | Votos: ". $contas[$unico[1]] ?? 0; echo "<br>Total: " . count($votos);
-echo '<footer><form action="zerar.php"><input type="submit" value="Zerar Urna" name="submit" class="botaovermelho"></form>';
-echo '<a href="resultado.log" download><button class="botaogenerico">Baixar Resultado</button></a></footer>';
+echo '<div><footer><a href="zerar.php"><button class="botaovermelho">Zerar Urna ⚠</button></a>';
+echo '<a href="resultado.log" download><button class="botaogenerico">Baixar Resultado ⭳</button></a></footer></div>';
 
 ?>
 <?php

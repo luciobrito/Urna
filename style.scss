@@ -9,7 +9,7 @@ $blur: 2px;
 @mixin botao($cor) {
   border-style: none;
   border-radius: 5px;
-  padding: 7px;
+  padding: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 0px #cccccc;
   background-color: $cor;
@@ -234,4 +234,26 @@ input[type="number"]:focus {
   font-weight: bold;
   text-align: center;
   height: 100%;
+}
+footer{
+  margin: 10px;
+display: flex;
+flex-wrap: nowrap;
+align-content: stretch;
+flex-direction: column;
+a{
+button{
+  width: 100%;
+
+}}
+}
+.grade{
+  margin: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  flex-direction: column;
+  button{
+    width: 100%;
+  }
 }

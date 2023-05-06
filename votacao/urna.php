@@ -25,13 +25,9 @@ if (!$_SESSION['ideleitor']) {
   <h1>Votação</h1>
   <div class="teclado">
     <form action="votacao.php" method="post" id="formvoto">
-      <input type="number" name="num_cand" id="numcand" placeholder="" min="10" max="99" step=".01"/><br />
+      <input type="number" name="num_cand" id="numcand" placeholder="" min="10" max="99" step=".01" oninput="consulta()"/><br />
 
     </form>
-
-
-
-
       <div class="teclado">
         <button class="btnteclado" onclick="add(1)">1 </button><button class="btnteclado"
           onclick="add(2)">2</button><button class="btnteclado" onclick="add(3)">3</button><button class="btnteclado"
@@ -41,7 +37,7 @@ if (!$_SESSION['ideleitor']) {
           onclick="add(0)">0</button> <br>
         <div class="tecfunc"> <!--Teclas Funcionais-->
           <button class="btncorrige" onclick="remover()">Corrige</button><button
-            class="btnbranco">Branco</button><a href="validacao.php"><input type="submit" value="Confirmar" onclick="" form="formvoto" class="btnconfirmar" /></a>
+            class="btnbranco" onclick="branco()">Branco</button><a href="validacao.php"><input type="submit" value="Confirmar" onclick="" form="formvoto" class="btnconfirmar" /></a>
         </div>
       </div>
 

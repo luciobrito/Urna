@@ -7,7 +7,8 @@ CREATE TABLE tb_candidatos(
 );
 CREATE TABLE tb_eleitor(
 	nome varchar(50),
-    id varchar(5) PRIMARY KEY
+    id varchar(5) PRIMARY KEY,
+    compareceu char(3)
 );
 CREATE TABLE tb_voto(
     voto numeric(2)

@@ -47,7 +47,7 @@ include '../base.php';
     if(isset($_POST['nome']) && isset($_POST['numero']) && $numero > 9){
     try{
     $resu = mysqli_query($conn,"INSERT INTO tb_candidatos(nome,partido,numero) VALUES('$nome','$partido','$numero')");
-    echo "<script>Candidato Registrado com Sucesso!</script>";
+    echo "<script>alert('Candidato Registrado com Sucesso!')</script>";
     }
     catch(Exception $e){ 
         $erro = $e->getMessage();
